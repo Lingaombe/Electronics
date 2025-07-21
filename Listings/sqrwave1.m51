@@ -1,0 +1,56 @@
+BL51 BANKED LINKER/LOCATER V6.22.4.0                                                    07/21/2025  20:50:08  PAGE 1
+
+
+BL51 BANKED LINKER/LOCATER V6.22.4.0, INVOKED BY:
+C:\KEIL_V5\C51\BIN\BL51.EXE .\Objects\sqrwave1.obj TO .\Objects\sqrwave1 PRINT (.\Listings\sqrwave1.m51)
+
+
+INPUT MODULES INCLUDED:
+  .\Objects\sqrwave1.obj (SQRWAVE1)
+
+
+LINK MAP OF MODULE:  .\Objects\sqrwave1 (SQRWAVE1)
+
+
+            TYPE    BASE      LENGTH    RELOCATION   SEGMENT NAME
+            -----------------------------------------------------
+
+            * * * * * * *   D A T A   M E M O R Y   * * * * * * *
+            REG     0000H     0008H     ABSOLUTE     "REG BANK 0"
+
+            * * * * * * *   C O D E   M E M O R Y   * * * * * * *
+            CODE    0000H     0016H     ABSOLUTE     
+
+
+
+SYMBOL TABLE OF MODULE:  .\Objects\sqrwave1 (SQRWAVE1)
+
+  VALUE           TYPE          NAME
+  ----------------------------------
+
+  -------         MODULE        SQRWAVE1
+  C:000DH         SYMBOL        AGAIN
+  C:0003H         SYMBOL        HERE
+  D:0090H         SYMBOL        P1
+  B:0088H.5       SYMBOL        TF0
+  D:008CH         SYMBOL        TH0
+  D:008AH         SYMBOL        TL0
+  D:0089H         SYMBOL        TMOD
+  B:0088H.4       SYMBOL        TR0
+  C:0000H         LINE#         65533
+  C:0003H         LINE#         2
+  C:0006H         LINE#         3
+  C:0009H         LINE#         4
+  C:000BH         LINE#         5
+  C:000DH         LINE#         6
+  C:0010H         LINE#         7
+  C:0012H         LINE#         8
+  C:0014H         LINE#         9
+  -------         ENDMOD        SQRWAVE1
+
+******************************************************************************
+* RESTRICTED VERSION WITH 0800H BYTE CODE SIZE LIMIT; USED: 0016H BYTE ( 1%) *
+******************************************************************************
+
+Program Size: data=8.0 xdata=0 code=22
+LINK/LOCATE RUN COMPLETE.  0 WARNING(S),  0 ERROR(S)
