@@ -1,4 +1,4 @@
-A51 MACRO ASSEMBLER  SQRWAVE1                                                             07/21/2025 20:50:07 PAGE     1
+A51 MACRO ASSEMBLER  SQRWAVE1                                                             07/23/2025 16:39:49 PAGE     1
 
 
 MACRO ASSEMBLER A51 V8.2.7.0
@@ -8,17 +8,17 @@ ASSEMBLER INVOKED BY: C:\Keil_v5\C51\BIN\A51.EXE sqrwave1.asm SET(SMALL) DEBUG P
 
 LOC  OBJ            LINE     SOURCE
 
-0000 758901            1     MOV TMOD,#01 ;Timer 0, 16-bitmode
-0003 758A1A            2     HERE: MOV TL0,#1AH ;TL0=1A, the low byte
-0006 758CFF            3     MOV TH0,#0FFH ;TH0=FF, the high byte
-0009 B295              4     CPL P1.5 ;complement P1.5 to get hi, lo
-000B D28C              5     SETB TR0 ;Start timer 0
-000D 308DFD            6     AGAIN: JNB TF0,AGAIN ;Monitor timer flag 0
-0010 C28C              7     CLR TR0 ;Stop the timer 0
-0012 C28D              8     CLR TF0 ;Clear timer 0 flag
-0014 80ED              9     SJMP HERE ;is not auto-reload
+0000 758901            1     MOV TMOD,#01 
+0003 758AF2            2     HERE: MOV TL0,#0F2H 
+0006 758CFF            3     MOV TH0,#0FFH 
+0009 B296              4     CPL P1.6 
+000B D28C              5     DELAY: SETB TR0 
+000D 308DFD            6     AGAIN: JNB TF0, AGAIN 
+0010 C28C              7     CLR TR0 
+0012 C28D              8     CLR TF0 
+0014 80ED              9     SJMP HERE
                       10     END
-A51 MACRO ASSEMBLER  SQRWAVE1                                                             07/21/2025 20:50:07 PAGE     2
+A51 MACRO ASSEMBLER  SQRWAVE1                                                             07/23/2025 16:39:49 PAGE     2
 
 SYMBOL TABLE LISTING
 ------ ----- -------
@@ -27,6 +27,7 @@ SYMBOL TABLE LISTING
 N A M E             T Y P E  V A L U E   ATTRIBUTES
 
 AGAIN. . . . . . .  C ADDR   000DH   A   
+DELAY. . . . . . .  C ADDR   000BH   A   
 HERE . . . . . . .  C ADDR   0003H   A   
 P1 . . . . . . . .  D ADDR   0090H   A   
 TF0. . . . . . . .  B ADDR   0088H.5 A   
