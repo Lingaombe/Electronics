@@ -1,0 +1,42 @@
+A51 MACRO ASSEMBLER  SQRWAVE                                                              07/27/2025 17:31:06 PAGE     1
+
+
+MACRO ASSEMBLER A51 V8.2.7.0
+OBJECT MODULE PLACED IN .\Objects\sqrwave.obj
+ASSEMBLER INVOKED BY: C:\Keil_v5\C51\BIN\A51.EXE sqrwave.asm SET(SMALL) DEBUG PRINT(.\Listings\sqrwave.lst) OBJECT(.\Obj
+                      ects\sqrwave.obj) EP
+
+LOC  OBJ            LINE     SOURCE
+
+0000 758901            1     MOV TMOD,#01 
+0003 758A00            2     HERE: MOV TL0,#0 
+0006 758CEE            3     MOV TH0,#0EEH 
+0009 B2A3              4     CPL P2.3 
+000B D28C              5     SETB TR0 
+000D 308DFD            6     AGAIN: JNB TF0,AGAIN 
+0010 C28C              7     CLR TR0 
+0012 C28D              8     CLR TF0 
+0014 80ED              9     SJMP HERE 
+                      10     END
+A51 MACRO ASSEMBLER  SQRWAVE                                                              07/27/2025 17:31:06 PAGE     2
+
+SYMBOL TABLE LISTING
+------ ----- -------
+
+
+N A M E             T Y P E  V A L U E   ATTRIBUTES
+
+AGAIN. . . . . . .  C ADDR   000DH   A   
+HERE . . . . . . .  C ADDR   0003H   A   
+P2 . . . . . . . .  D ADDR   00A0H   A   
+TF0. . . . . . . .  B ADDR   0088H.5 A   
+TH0. . . . . . . .  D ADDR   008CH   A   
+TL0. . . . . . . .  D ADDR   008AH   A   
+TMOD . . . . . . .  D ADDR   0089H   A   
+TR0. . . . . . . .  B ADDR   0088H.4 A   
+
+
+REGISTER BANK(S) USED: 0 
+
+
+ASSEMBLY COMPLETE.  0 WARNING(S), 0 ERROR(S)
