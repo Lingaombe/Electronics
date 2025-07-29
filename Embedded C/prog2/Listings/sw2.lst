@@ -1,0 +1,56 @@
+C51 COMPILER V9.60.7.0   SW2                                                               07/29/2025 18:22:30 PAGE 1   
+
+
+C51 COMPILER V9.60.7.0, COMPILATION OF MODULE SW2
+OBJECT MODULE PLACED IN .\Objects\sw2.obj
+COMPILER INVOKED BY: C:\Keil_v5\C51\BIN\C51.EXE sw2.c OPTIMIZE(8,SPEED) BROWSE DEBUG OBJECTEXTEND PRINT(.\Listings\sw2.l
+                    -st) TABS(2) OBJECT(.\Objects\sw2.obj)
+
+line level    source
+
+   1          /* Program-2: Write an Embedded C program to generate a square wave with ON and OFF time of 1
+   2          sec on port pin P2.0. Assume that XTAL = 11.0592 MHz. Observe the waveform on keil analyzer */
+   3          
+   4          #include <reg51.h>
+   5          
+   6          sbit x = P2^0;
+   7          void delay(unsigned int);
+   8          void main () 
+   9          {
+  10   1        x =0; 
+  11   1        while(1) 
+  12   1        {
+  13   2          x = 1; 
+  14   2          delay(10000);
+  15   2          x = 0; 
+  16   2          delay(10000);
+  17   2        }
+  18   1      }
+  19          void delay(unsigned int k)
+  20          {
+  21   1      unsigned int i;
+  22   1        for(i=0; i<k; i++)
+  23   1        {
+  24   2          //timer delay of 100 µs
+  25   2          TMOD = 0x02; 
+  26   2          TH0=0xA4; 
+  27   2          TR0 = 1; 
+  28   2          while (TF0 == 0); 
+  29   2          TR0 = 0; 
+  30   2          TF0 = 0; 
+  31   2        }
+  32   1      }
+
+
+MODULE INFORMATION:   STATIC OVERLAYABLE
+   CODE SIZE        =     55    ----
+   CONSTANT SIZE    =   ----    ----
+   XDATA SIZE       =   ----    ----
+   PDATA SIZE       =   ----    ----
+   DATA SIZE        =   ----    ----
+   IDATA SIZE       =   ----    ----
+   BIT SIZE         =   ----    ----
+END OF MODULE INFORMATION.
+
+
+C51 COMPILATION COMPLETE.  0 WARNING(S),  0 ERROR(S)
