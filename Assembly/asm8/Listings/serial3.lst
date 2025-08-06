@@ -1,0 +1,45 @@
+A51 MACRO ASSEMBLER  SERIAL3                                                              08/06/2025 20:14:14 PAGE     1
+
+
+MACRO ASSEMBLER A51 V8.2.7.0
+OBJECT MODULE PLACED IN .\Objects\serial3.obj
+ASSEMBLER INVOKED BY: C:\Keil_v5\C51\BIN\A51.EXE serial3.asm SET(SMALL) DEBUG PRINT(.\Listings\serial3.lst) OBJECT(.\Obj
+                      ects\serial3.obj) EP
+
+LOC  OBJ            LINE     SOURCE
+
+                       1     ;Write a program to receive serially at 4800 baud, 8-bit data, with 1
+                       2     ;stop bit. After receiving send it continuously to P0.
+                       3     
+0000 758920            4     MOV TMOD,#20H 
+0003 758DFA            5     MOV TH1,#-6 
+0006 759850            6     MOV SCON,#50H 
+0009 D28E              7     SETB TR1 
+000B 3098FD            8     HERE: JNB RI,HERE 
+000E E599              9     MOV A,SBUF 
+0010 F590             10     MOV P1,A 
+0012 C298             11     CLR RI 
+0014 80F5             12     SJMP HERE 
+                      13     END
+A51 MACRO ASSEMBLER  SERIAL3                                                              08/06/2025 20:14:14 PAGE     2
+
+SYMBOL TABLE LISTING
+------ ----- -------
+
+
+N A M E             T Y P E  V A L U E   ATTRIBUTES
+
+HERE . . . . . . .  C ADDR   000BH   A   
+P1 . . . . . . . .  D ADDR   0090H   A   
+RI . . . . . . . .  B ADDR   0098H.0 A   
+SBUF . . . . . . .  D ADDR   0099H   A   
+SCON . . . . . . .  D ADDR   0098H   A   
+TH1. . . . . . . .  D ADDR   008DH   A   
+TMOD . . . . . . .  D ADDR   0089H   A   
+TR1. . . . . . . .  B ADDR   0088H.6 A   
+
+
+REGISTER BANK(S) USED: 0 
+
+
+ASSEMBLY COMPLETE.  0 WARNING(S), 0 ERROR(S)

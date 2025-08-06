@@ -1,0 +1,118 @@
+BL51 BANKED LINKER/LOCATER V6.22.4.0                                                    08/06/2025  20:14:15  PAGE 1
+
+
+BL51 BANKED LINKER/LOCATER V6.22.4.0, INVOKED BY:
+C:\KEIL_V5\C51\BIN\BL51.EXE .\Objects\serial1.obj, .\Objects\serial2.obj, .\Objects\serial3.obj TO .\Objects\serial PRIN
+>> T (.\Listings\serial.m51)
+
+
+INPUT MODULES INCLUDED:
+  .\Objects\serial1.obj (SERIAL1)
+  .\Objects\serial2.obj (SERIAL2)
+  .\Objects\serial3.obj (SERIAL3)
+
+
+LINK MAP OF MODULE:  .\Objects\serial (SERIAL1)
+
+
+            TYPE    BASE      LENGTH    RELOCATION   SEGMENT NAME
+            -----------------------------------------------------
+
+            * * * * * * *   D A T A   M E M O R Y   * * * * * * *
+            REG     0000H     0008H     ABSOLUTE     "REG BANK 0"
+
+            * * * * * * *   C O D E   M E M O R Y   * * * * * * *
+            CODE    0000H     0015H     ABSOLUTE     
+* OVERLAP * CODE    0000H     0021H     ABSOLUTE     
+* OVERLAP * CODE    0000H     0016H     ABSOLUTE     
+
+
+
+SYMBOL TABLE OF MODULE:  .\Objects\serial (SERIAL1)
+
+  VALUE           TYPE          NAME
+  ----------------------------------
+
+  -------         MODULE        SERIAL1
+  C:000BH         SYMBOL        AGAIN
+  C:000EH         SYMBOL        HERE
+  D:0099H         SYMBOL        SBUF
+  D:0098H         SYMBOL        SCON
+  D:008DH         SYMBOL        TH1
+  B:0098H.1       SYMBOL        TI
+  D:0089H         SYMBOL        TMOD
+  B:0088H.6       SYMBOL        TR1
+  C:0000H         LINE#         4
+  C:0003H         LINE#         5
+  C:0006H         LINE#         6
+  C:0009H         LINE#         7
+  C:000BH         LINE#         8
+  C:000EH         LINE#         9
+  C:0011H         LINE#         10
+  C:0013H         LINE#         11
+  -------         ENDMOD        SERIAL1
+
+  -------         MODULE        SERIAL2
+  C:000BH         SYMBOL        AGAIN
+  C:001BH         SYMBOL        HERE
+  D:0099H         SYMBOL        SBUF
+  D:0098H         SYMBOL        SCON
+  D:008DH         SYMBOL        TH1
+  B:0098H.1       SYMBOL        TI
+BL51 BANKED LINKER/LOCATER V6.22.4.0                                                  08/06/2025  20:14:15  PAGE 2
+
+
+  D:0089H         SYMBOL        TMOD
+  B:0088H.6       SYMBOL        TR1
+  C:0019H         SYMBOL        TRANS
+  C:0000H         LINE#         4
+  C:0003H         LINE#         5
+  C:0006H         LINE#         6
+  C:0009H         LINE#         7
+  C:000BH         LINE#         8
+  C:000DH         LINE#         9
+  C:000FH         LINE#         10
+  C:0011H         LINE#         11
+  C:0013H         LINE#         12
+  C:0015H         LINE#         13
+  C:0017H         LINE#         14
+  C:0019H         LINE#         15
+  C:001BH         LINE#         16
+  C:001EH         LINE#         17
+  C:0020H         LINE#         18
+  -------         ENDMOD        SERIAL2
+
+  -------         MODULE        SERIAL3
+  C:000BH         SYMBOL        HERE
+  D:0090H         SYMBOL        P1
+  B:0098H.0       SYMBOL        RI
+  D:0099H         SYMBOL        SBUF
+  D:0098H         SYMBOL        SCON
+  D:008DH         SYMBOL        TH1
+  D:0089H         SYMBOL        TMOD
+  B:0088H.6       SYMBOL        TR1
+  C:0000H         LINE#         4
+  C:0003H         LINE#         5
+  C:0006H         LINE#         6
+  C:0009H         LINE#         7
+  C:000BH         LINE#         8
+  C:000EH         LINE#         9
+  C:0010H         LINE#         10
+  C:0012H         LINE#         11
+  C:0014H         LINE#         12
+  -------         ENDMOD        SERIAL3
+
+*** WARNING L5: CODE SPACE MEMORY OVERLAP
+    FROM:    0000H
+    TO:      0014H
+
+*** WARNING L5: CODE SPACE MEMORY OVERLAP
+    FROM:    0000H
+    TO:      0020H
+
+******************************************************************************
+* RESTRICTED VERSION WITH 0800H BYTE CODE SIZE LIMIT; USED: 004CH BYTE ( 3%) *
+******************************************************************************
+
+Program Size: data=8.0 xdata=0 code=76
+LINK/LOCATE RUN COMPLETE.  2 WARNING(S),  0 ERROR(S)

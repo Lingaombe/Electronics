@@ -1,0 +1,52 @@
+A51 MACRO ASSEMBLER  SERIAL2                                                              08/06/2025 20:13:07 PAGE     1
+
+
+MACRO ASSEMBLER A51 V8.2.7.0
+OBJECT MODULE PLACED IN .\Objects\serial2.obj
+ASSEMBLER INVOKED BY: C:\Keil_v5\C51\BIN\A51.EXE serial2.asm SET(SMALL) DEBUG PRINT(.\Listings\serial2.lst) OBJECT(.\Obj
+                      ects\serial2.obj) EP
+
+LOC  OBJ            LINE     SOURCE
+
+                       1     ;Write a program to transfer the message “YES” serially at 9600 baud, 8-
+                       2     ;bit data, with 1 stop bit.
+                       3     
+0000 758920            4     MOV TMOD,#20H 
+0003 758DFD            5     MOV TH1,#-3 
+0006 759850            6     MOV SCON,#50H 
+0009 D28E              7     SETB TR1
+000B 7459              8     AGAIN: MOV A,#"Y" 
+000D 1119              9     ACALL TRANS
+000F 7445             10     MOV A,#"E"
+0011 1119             11     ACALL TRANS
+0013 7453             12     MOV A,#"S" 
+0015 1119             13     ACALL TRANS
+0017 80F2             14     SJMP AGAIN 
+0019 F599             15     TRANS: MOV SBUF,A 
+001B 3099FD           16     HERE: JNB TI,HERE 
+001E C299             17     CLR TI 
+0020 22               18     RET
+                      19     END
+A51 MACRO ASSEMBLER  SERIAL2                                                              08/06/2025 20:13:07 PAGE     2
+
+SYMBOL TABLE LISTING
+------ ----- -------
+
+
+N A M E             T Y P E  V A L U E   ATTRIBUTES
+
+AGAIN. . . . . . .  C ADDR   000BH   A   
+HERE . . . . . . .  C ADDR   001BH   A   
+SBUF . . . . . . .  D ADDR   0099H   A   
+SCON . . . . . . .  D ADDR   0098H   A   
+TH1. . . . . . . .  D ADDR   008DH   A   
+TI . . . . . . . .  B ADDR   0098H.1 A   
+TMOD . . . . . . .  D ADDR   0089H   A   
+TR1. . . . . . . .  B ADDR   0088H.6 A   
+TRANS. . . . . . .  C ADDR   0019H   A   
+
+
+REGISTER BANK(S) USED: 0 
+
+
+ASSEMBLY COMPLETE.  0 WARNING(S), 0 ERROR(S)

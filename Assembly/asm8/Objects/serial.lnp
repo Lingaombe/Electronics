@@ -1,0 +1,5 @@
+".\Objects\serial1.obj",
+".\Objects\serial2.obj",
+".\Objects\serial3.obj" 
+TO ".\Objects\serial" 
+PRINT(".\Listings\serial.m51")
