@@ -1,0 +1,56 @@
+A51 MACRO ASSEMBLER  INTERRUPT2                                                           08/06/2025 20:18:47 PAGE     1
+
+
+MACRO ASSEMBLER A51 V8.2.7.0
+OBJECT MODULE PLACED IN .\Objects\interrupt2.obj
+ASSEMBLER INVOKED BY: C:\Keil_v5\C51\BIN\A51.EXE interrupt2.asm SET(SMALL) DEBUG PRINT(.\Listings\interrupt2.lst) OBJECT
+                      (.\Objects\interrupt2.obj) EP
+
+LOC  OBJ            LINE     SOURCE
+
+                       1     
+                       2     
+                       3     
+                       4     
+                       5     
+0000                   6     ORG 0000H
+0000 020030            7     LJMP MAIN ;by-pass interrupt vector table ;
+                       8     ;--ISR for timer 0 to generate square wave
+000B                   9     ORG 000BH ;Timer 0 interrupt vector table
+000B B2A1             10     CPL P2.1 ;toggle P2.1 pin
+000D 32               11     RETI ;return from ISR
+                      12     ;--The main program for initialization
+0030                  13     ORG 0030H ;after vector table space
+                      14     
+0030 758902           15     MAIN: MOV TMOD,#02H ;Timer 0, mode 2
+0033 7580FF           16     MOV P0,#0FFH ;make P0 an input port
+0036 758CA4           17     MOV TH0,#-92 ;TH0=A4H for -92
+0039 75A882           18     MOV IE,#82H ;IE=10000010 (bin) ; enable Timer 0
+003C D28C             19     SETB TR0 ;Start Timer 0
+003E E580             20     BACK: MOV A,P0 ;get data from P0
+0040 F590             21     MOV P1,A ;issue it to P1
+0042 80FA             22     SJMP BACK ;keep doing it loop ;unless interrupted by TF0
+                      23     END
+A51 MACRO ASSEMBLER  INTERRUPT2                                                           08/06/2025 20:18:47 PAGE     2
+
+SYMBOL TABLE LISTING
+------ ----- -------
+
+
+N A M E             T Y P E  V A L U E   ATTRIBUTES
+
+BACK . . . . . . .  C ADDR   003EH   A   
+IE . . . . . . . .  D ADDR   00A8H   A   
+MAIN . . . . . . .  C ADDR   0030H   A   
+P0 . . . . . . . .  D ADDR   0080H   A   
+P1 . . . . . . . .  D ADDR   0090H   A   
+P2 . . . . . . . .  D ADDR   00A0H   A   
+TH0. . . . . . . .  D ADDR   008CH   A   
+TMOD . . . . . . .  D ADDR   0089H   A   
+TR0. . . . . . . .  B ADDR   0088H.4 A   
+
+
+REGISTER BANK(S) USED: 0 
+
+
+ASSEMBLY COMPLETE.  0 WARNING(S), 0 ERROR(S)

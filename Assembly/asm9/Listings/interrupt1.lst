@@ -1,0 +1,39 @@
+A51 MACRO ASSEMBLER  INTERRUPT1                                                           08/06/2025 20:17:26 PAGE     1
+
+
+MACRO ASSEMBLER A51 V8.2.7.0
+OBJECT MODULE PLACED IN .\Objects\interrupt1.obj
+ASSEMBLER INVOKED BY: C:\Keil_v5\C51\BIN\A51.EXE interrupt1.asm SET(SMALL) DEBUG PRINT(.\Listings\interrupt1.lst) OBJECT
+                      (.\Objects\interrupt1.obj) EP
+
+LOC  OBJ            LINE     SOURCE
+
+                       1     
+                       2     
+                       3     
+                       4     
+                       5     
+0000 75A896            6     MOV IE,#10010110B ;enable serial, ;timer 0, EX1
+                       7     
+0003 D2AF              8     SETB IE.7 ;EA=1, global enable
+0005 D2AC              9     SETB IE.4 ;enable serial interrupt
+0007 D2A9             10     SETB IE.1 ;enable Timer 0 interrupt
+0009 D2AA             11     SETB IE.2 ;enable EX1
+000B C2A9             12     CLR IE.1 ;mask (disable) timer 0 ;interrupt only
+000D C2AF             13     CLR IE.7 ;disable all interrupts
+                      14     END
+A51 MACRO ASSEMBLER  INTERRUPT1                                                           08/06/2025 20:17:26 PAGE     2
+
+SYMBOL TABLE LISTING
+------ ----- -------
+
+
+N A M E             T Y P E  V A L U E   ATTRIBUTES
+
+IE . . . . . . . .  D ADDR   00A8H   A   
+
+
+REGISTER BANK(S) USED: 0 
+
+
+ASSEMBLY COMPLETE.  0 WARNING(S), 0 ERROR(S)
