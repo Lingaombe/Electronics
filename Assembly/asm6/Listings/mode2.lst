@@ -1,0 +1,47 @@
+A51 MACRO ASSEMBLER  MODE2                                                                08/06/2025 20:04:46 PAGE     1
+
+
+MACRO ASSEMBLER A51 V8.2.7.0
+OBJECT MODULE PLACED IN .\Objects\mode2.obj
+ASSEMBLER INVOKED BY: C:\Keil_v5\C51\BIN\A51.EXE mode2.asm SET(SMALL) DEBUG PRINT(.\Listings\mode2.lst) OBJECT(.\Objects
+                      \mode2.obj) EP
+
+LOC  OBJ            LINE     SOURCE
+
+                       1     
+                       2     
+0000 758902            3     MOV TMOD,#2H 
+0003 758C00            4     MOV TH0,#0
+0006 7DFA              5     AGAIN: MOV R5,#250 
+0008 110E              6     ACALL DELAY
+000A B290              7     CPL P1.0
+000C 80F8              8     SJMP AGAIN
+000E D28C              9     DELAY: SETB TR0 
+0010 308DFD           10     BACK: JNB TF0,BACK 
+0013 C28C             11     CLR TR0 
+0015 C28D             12     CLR TF0 
+0017 DDF5             13     DJNZ R5,DELAY
+0019 22               14     RET
+                      15     END
+A51 MACRO ASSEMBLER  MODE2                                                                08/06/2025 20:04:46 PAGE     2
+
+SYMBOL TABLE LISTING
+------ ----- -------
+
+
+N A M E             T Y P E  V A L U E   ATTRIBUTES
+
+AGAIN. . . . . . .  C ADDR   0006H   A   
+BACK . . . . . . .  C ADDR   0010H   A   
+DELAY. . . . . . .  C ADDR   000EH   A   
+P1 . . . . . . . .  D ADDR   0090H   A   
+TF0. . . . . . . .  B ADDR   0088H.5 A   
+TH0. . . . . . . .  D ADDR   008CH   A   
+TMOD . . . . . . .  D ADDR   0089H   A   
+TR0. . . . . . . .  B ADDR   0088H.4 A   
+
+
+REGISTER BANK(S) USED: 0 
+
+
+ASSEMBLY COMPLETE.  0 WARNING(S), 0 ERROR(S)

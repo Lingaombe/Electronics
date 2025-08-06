@@ -1,0 +1,15 @@
+/* Program-5 Find the frequency of a square wave generated on pin P1.0*/
+
+MOV TMOD,#2H 
+MOV TH0,#0
+AGAIN: MOV R5,#250 
+ACALL DELAY
+CPL P1.0
+SJMP AGAIN
+DELAY: SETB TR0 
+BACK: JNB TF0,BACK 
+CLR TR0 
+CLR TF0 
+DJNZ R5,DELAY
+RET
+END
