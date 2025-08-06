@@ -1,0 +1,73 @@
+A51 MACRO ASSEMBLER  INTERRUPT6                                                           08/06/2025 20:25:00 PAGE     1
+
+
+MACRO ASSEMBLER A51 V8.2.7.0
+OBJECT MODULE PLACED IN .\Objects\interrupt6.obj
+ASSEMBLER INVOKED BY: C:\Keil_v5\C51\BIN\A51.EXE interrupt6.asm SET(SMALL) DEBUG PRINT(.\Listings\interrupt6.lst) OBJECT
+                      (.\Objects\interrupt6.obj) EP
+
+LOC  OBJ            LINE     SOURCE
+
+                       1     
+                       2     
+                       3     
+                       4     
+0000                   5     ORG 0000H
+0000 020030            6     LJMP MAIN
+0023                   7     ORG 23H
+0023 020100            8     LJMP SERIAL ;jump to serial int ISR
+0030                   9     ORG 30H
+                      10     
+0030 7590FF           11     MAIN: MOV P1,#0FFH ;make P1 an input port
+0033 758920           12     MOV TMOD,#20H ;timer 1, auto reload
+0036 758DFD           13     MOV TH1,#0FDH ;9600 baud rate
+0039 759850           14     MOV SCON,#50H ;8-bit,1 stop, ren enabled
+003C 8590A8           15     MOV IE,10010000B ;enable serial int.
+003F D28E             16     SETB TR1 ;start timer 1
+0041 E590             17     BACK: MOV A,P1 ;read data from port 1
+                      18     
+0043 F5A0             19     MOV P2,A ;send it to P2
+0045 80FA             20     SJMP BACK ;stay in loop indefinitely
+                      21     
+                      22     ;-----------------SERIAL PORT ISR
+0100                  23     ORG 100H
+                      24     
+0100 209907           25     SERIAL: JB TI,TRANS ;jump if TI is high
+0103 E599             26     MOV A,SBUF ;otherwise due to receive
+0105 F580             27     MOV P0,A ;send incoming data to P0
+0107 C298             28     CLR RI ;clear RI since CPU doesn’t
+0109 32               29     RETI ;return from ISR
+                      30     
+010A C299             31     TRANS: CLR TI ;clear TI since CPU doesn’t
+                      32     
+010C 32               33     RETI ;return from ISR
+                      34     END
+A51 MACRO ASSEMBLER  INTERRUPT6                                                           08/06/2025 20:25:00 PAGE     2
+
+SYMBOL TABLE LISTING
+------ ----- -------
+
+
+N A M E             T Y P E  V A L U E   ATTRIBUTES
+
+BACK . . . . . . .  C ADDR   0041H   A   
+IE . . . . . . . .  D ADDR   00A8H   A   
+MAIN . . . . . . .  C ADDR   0030H   A   
+P0 . . . . . . . .  D ADDR   0080H   A   
+P1 . . . . . . . .  D ADDR   0090H   A   
+P2 . . . . . . . .  D ADDR   00A0H   A   
+RI . . . . . . . .  B ADDR   0098H.0 A   
+SBUF . . . . . . .  D ADDR   0099H   A   
+SCON . . . . . . .  D ADDR   0098H   A   
+SERIAL . . . . . .  C ADDR   0100H   A   
+TH1. . . . . . . .  D ADDR   008DH   A   
+TI . . . . . . . .  B ADDR   0098H.1 A   
+TMOD . . . . . . .  D ADDR   0089H   A   
+TR1. . . . . . . .  B ADDR   0088H.6 A   
+TRANS. . . . . . .  C ADDR   010AH   A   
+
+
+REGISTER BANK(S) USED: 0 
+
+
+ASSEMBLY COMPLETE.  0 WARNING(S), 0 ERROR(S)

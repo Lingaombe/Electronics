@@ -1,0 +1,32 @@
+A51 MACRO ASSEMBLER  INTERRUPT8                                                           08/06/2025 20:27:46 PAGE     1
+
+
+MACRO ASSEMBLER A51 V8.2.7.0
+OBJECT MODULE PLACED IN .\Objects\interrupt8.obj
+ASSEMBLER INVOKED BY: C:\Keil_v5\C51\BIN\A51.EXE interrupt8.asm SET(SMALL) DEBUG PRINT(.\Listings\interrupt8.lst) OBJECT
+                      (.\Objects\interrupt8.obj) EP
+
+LOC  OBJ            LINE     SOURCE
+
+                       1     
+                       2     
+                       3     
+0000 75B804            4     MOV IP,#00000100B ;IP.2=1 assign INT1 higher priority. The instruction SETB
+                       5     END
+                             
+                             ;IP.2 also will do the same thing as the above line since IP is bit-addressable.
+A51 MACRO ASSEMBLER  INTERRUPT8                                                           08/06/2025 20:27:46 PAGE     2
+
+SYMBOL TABLE LISTING
+------ ----- -------
+
+
+N A M E             T Y P E  V A L U E   ATTRIBUTES
+
+IP . . . . . . . .  D ADDR   00B8H   A   
+
+
+REGISTER BANK(S) USED: 0 
+
+
+ASSEMBLY COMPLETE.  0 WARNING(S), 0 ERROR(S)

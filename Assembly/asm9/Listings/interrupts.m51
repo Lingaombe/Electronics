@@ -1,16 +1,21 @@
-BL51 BANKED LINKER/LOCATER V6.22.4.0                                                    08/06/2025  20:21:01  PAGE 1
+BL51 BANKED LINKER/LOCATER V6.22.4.0                                                    08/06/2025  20:27:48  PAGE 1
 
 
 BL51 BANKED LINKER/LOCATER V6.22.4.0, INVOKED BY:
 C:\KEIL_V5\C51\BIN\BL51.EXE .\Objects\interrupt1.obj, .\Objects\interrupt2.obj, .\Objects\interrupt3.obj, .\Objects\inte
->> rupt4.obj TO .\Objects\interrupts PRINT (.\Listings\interrupts.m51)
+>> rrupt5.obj, .\Objects\interrupt4.obj, .\Objects\interrupt6.obj, .\Objects\interrupt7.obj, .\Objects\interrupt8.obj TO
+>>  .\Objects\interrupts PRINT (.\Listings\interrupts.m51)
 
 
 INPUT MODULES INCLUDED:
   .\Objects\interrupt1.obj (INTERRUPT1)
   .\Objects\interrupt2.obj (INTERRUPT2)
   .\Objects\interrupt3.obj (INTERRUPT3)
-  .\Objects\interupt4.obj (INTERUPT4)
+  .\Objects\interrupt5.obj (INTERRUPT5)
+  .\Objects\interrupt4.obj (INTERRUPT4)
+  .\Objects\interrupt6.obj (INTERRUPT6)
+  .\Objects\interrupt7.obj (INTERRUPT7)
+  .\Objects\interrupt8.obj (INTERRUPT8)
 
 
 LINK MAP OF MODULE:  .\Objects\interrupts (INTERRUPT1)
@@ -26,7 +31,11 @@ LINK MAP OF MODULE:  .\Objects\interrupts (INTERRUPT1)
             CODE    0000H     000FH     ABSOLUTE     
 * OVERLAP * CODE    0000H     0044H     ABSOLUTE     
 * OVERLAP * CODE    0000H     0035H     ABSOLUTE     
+* OVERLAP * CODE    0000H     010BH     ABSOLUTE     
 * OVERLAP * CODE    0000H     0037H     ABSOLUTE     
+* OVERLAP * CODE    0000H     010DH     ABSOLUTE     
+* OVERLAP * CODE    0000H     010DH     ABSOLUTE     
+* OVERLAP * CODE    0000H     0003H     ABSOLUTE     
 
 
 
@@ -50,6 +59,9 @@ SYMBOL TABLE OF MODULE:  .\Objects\interrupts (INTERRUPT1)
   C:003EH         SYMBOL        BACK
   D:00A8H         SYMBOL        IE
   C:0030H         SYMBOL        MAIN
+BL51 BANKED LINKER/LOCATER V6.22.4.0                                                  08/06/2025  20:27:48  PAGE 2
+
+
   D:0080H         SYMBOL        P0
   D:0090H         SYMBOL        P1
   D:00A0H         SYMBOL        P2
@@ -59,9 +71,6 @@ SYMBOL TABLE OF MODULE:  .\Objects\interrupts (INTERRUPT1)
   C:0000H         LINE#         7
   C:000BH         LINE#         10
   C:000DH         LINE#         11
-BL51 BANKED LINKER/LOCATER V6.22.4.0                                                  08/06/2025  20:21:01  PAGE 2
-
-
   C:0030H         LINE#         15
   C:0033H         LINE#         16
   C:0036H         LINE#         17
@@ -91,7 +100,45 @@ SYMBOL TABLE OF MODULE:  .\Objects\interrupts (INTERRUPT1)
   C:0033H         LINE#         22
   -------         ENDMOD        INTERRUPT3
 
-  -------         MODULE        INTERUPT4
+  -------         MODULE        INTERRUPT5
+  C:0041H         SYMBOL        BACK
+  D:00A8H         SYMBOL        IE
+  C:0030H         SYMBOL        MAIN
+  D:0090H         SYMBOL        P1
+  D:00A0H         SYMBOL        P2
+  B:0098H.0       SYMBOL        RI
+  D:0099H         SYMBOL        SBUF
+  D:0098H         SYMBOL        SCON
+  C:0100H         SYMBOL        SERIAL
+  D:008DH         SYMBOL        TH1
+  B:0098H.1       SYMBOL        TI
+  D:0089H         SYMBOL        TMOD
+  B:0088H.6       SYMBOL        TR1
+  C:0108H         SYMBOL        TRANS
+  C:0000H         LINE#         6
+  C:0023H         LINE#         8
+  C:0030H         LINE#         11
+  C:0033H         LINE#         12
+BL51 BANKED LINKER/LOCATER V6.22.4.0                                                  08/06/2025  20:27:48  PAGE 3
+
+
+  C:0036H         LINE#         13
+  C:0039H         LINE#         14
+  C:003CH         LINE#         15
+  C:003FH         LINE#         16
+  C:0041H         LINE#         18
+  C:0043H         LINE#         19
+  C:0045H         LINE#         20
+  C:0047H         LINE#         21
+  C:0100H         LINE#         26
+  C:0103H         LINE#         27
+  C:0105H         LINE#         28
+  C:0107H         LINE#         29
+  C:0108H         LINE#         31
+  C:010AH         LINE#         33
+  -------         ENDMOD        INTERRUPT5
+
+  -------         MODULE        INTERRUPT4
   C:0017H         SYMBOL        BACK
   C:0035H         SYMBOL        HERE
   D:00A8H         SYMBOL        IE
@@ -107,7 +154,97 @@ SYMBOL TABLE OF MODULE:  .\Objects\interrupts (INTERRUPT1)
   C:0030H         LINE#         19
   C:0032H         LINE#         20
   C:0035H         LINE#         21
-  -------         ENDMOD        INTERUPT4
+  -------         ENDMOD        INTERRUPT4
+
+  -------         MODULE        INTERRUPT6
+  C:0041H         SYMBOL        BACK
+  D:00A8H         SYMBOL        IE
+  C:0030H         SYMBOL        MAIN
+  D:0080H         SYMBOL        P0
+  D:0090H         SYMBOL        P1
+  D:00A0H         SYMBOL        P2
+  B:0098H.0       SYMBOL        RI
+  D:0099H         SYMBOL        SBUF
+  D:0098H         SYMBOL        SCON
+  C:0100H         SYMBOL        SERIAL
+  D:008DH         SYMBOL        TH1
+  B:0098H.1       SYMBOL        TI
+  D:0089H         SYMBOL        TMOD
+  B:0088H.6       SYMBOL        TR1
+  C:010AH         SYMBOL        TRANS
+  C:0000H         LINE#         6
+  C:0023H         LINE#         8
+  C:0030H         LINE#         11
+  C:0033H         LINE#         12
+  C:0036H         LINE#         13
+  C:0039H         LINE#         14
+  C:003CH         LINE#         15
+BL51 BANKED LINKER/LOCATER V6.22.4.0                                                  08/06/2025  20:27:48  PAGE 4
+
+
+  C:003FH         LINE#         16
+  C:0041H         LINE#         17
+  C:0043H         LINE#         19
+  C:0045H         LINE#         20
+  C:0100H         LINE#         25
+  C:0103H         LINE#         26
+  C:0105H         LINE#         27
+  C:0107H         LINE#         28
+  C:0109H         LINE#         29
+  C:010AH         LINE#         31
+  C:010CH         LINE#         33
+  -------         ENDMOD        INTERRUPT6
+
+  -------         MODULE        INTERRUPT7
+  C:0046H         SYMBOL        BACK
+  D:00A8H         SYMBOL        IE
+  C:0030H         SYMBOL        MAIN
+  D:0080H         SYMBOL        P0
+  D:0090H         SYMBOL        P1
+  D:00A0H         SYMBOL        P2
+  B:0098H.0       SYMBOL        RI
+  D:0099H         SYMBOL        SBUF
+  D:0098H         SYMBOL        SCON
+  C:0100H         SYMBOL        SERIAL
+  D:008CH         SYMBOL        TH0
+  D:008DH         SYMBOL        TH1
+  B:0098H.1       SYMBOL        TI
+  D:0089H         SYMBOL        TMOD
+  B:0088H.4       SYMBOL        TR0
+  B:0088H.6       SYMBOL        TR1
+  C:010AH         SYMBOL        TRANS
+  C:0000H         LINE#         9
+  C:000BH         LINE#         11
+  C:000DH         LINE#         12
+  C:0023H         LINE#         14
+  C:0030H         LINE#         17
+  C:0033H         LINE#         18
+  C:0036H         LINE#         19
+  C:0039H         LINE#         20
+  C:003CH         LINE#         21
+  C:003FH         LINE#         22
+  C:0042H         LINE#         23
+  C:0044H         LINE#         25
+  C:0046H         LINE#         26
+  C:0048H         LINE#         27
+  C:004AH         LINE#         28
+  C:004CH         LINE#         29
+  C:0100H         LINE#         33
+  C:0103H         LINE#         34
+  C:0105H         LINE#         35
+  C:0107H         LINE#         36
+  C:0109H         LINE#         37
+  C:010AH         LINE#         38
+  C:010CH         LINE#         39
+  -------         ENDMOD        INTERRUPT7
+
+  -------         MODULE        INTERRUPT8
+BL51 BANKED LINKER/LOCATER V6.22.4.0                                                  08/06/2025  20:27:48  PAGE 5
+
+
+  D:00B8H         SYMBOL        IP
+  C:0000H         LINE#         4
+  -------         ENDMOD        INTERRUPT8
 
 *** WARNING L5: CODE SPACE MEMORY OVERLAP
     FROM:    0000H
@@ -119,14 +256,27 @@ SYMBOL TABLE OF MODULE:  .\Objects\interrupts (INTERRUPT1)
 
 *** WARNING L5: CODE SPACE MEMORY OVERLAP
     FROM:    0000H
-BL51 BANKED LINKER/LOCATER V6.22.4.0                                                  08/06/2025  20:21:01  PAGE 3
-
-
     TO:      0043H
 
+*** WARNING L5: CODE SPACE MEMORY OVERLAP
+    FROM:    0000H
+    TO:      010AH
+
+*** WARNING L5: CODE SPACE MEMORY OVERLAP
+    FROM:    0000H
+    TO:      010AH
+
+*** WARNING L5: CODE SPACE MEMORY OVERLAP
+    FROM:    0000H
+    TO:      010CH
+
+*** WARNING L5: CODE SPACE MEMORY OVERLAP
+    FROM:    0000H
+    TO:      010CH
+
 ******************************************************************************
-* RESTRICTED VERSION WITH 0800H BYTE CODE SIZE LIMIT; USED: 0051H BYTE ( 3%) *
+* RESTRICTED VERSION WITH 0800H BYTE CODE SIZE LIMIT; USED: 00DCH BYTE (10%) *
 ******************************************************************************
 
-Program Size: data=8.0 xdata=0 code=191
-LINK/LOCATE RUN COMPLETE.  3 WARNING(S),  0 ERROR(S)
+Program Size: data=8.0 xdata=0 code=999
+LINK/LOCATE RUN COMPLETE.  7 WARNING(S),  0 ERROR(S)

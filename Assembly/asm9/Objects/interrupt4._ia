@@ -1,0 +1,1 @@
+"interrupt4.asm" SET (SMALL) DEBUG PRINT(.\Listings\interrupt4.lst) OBJECT(.\Objects\interrupt4.obj) EP

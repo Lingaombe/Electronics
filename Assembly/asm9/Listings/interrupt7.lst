@@ -1,0 +1,81 @@
+A51 MACRO ASSEMBLER  INTERRUPT7                                                           08/06/2025 20:25:56 PAGE     1
+
+
+MACRO ASSEMBLER A51 V8.2.7.0
+OBJECT MODULE PLACED IN .\Objects\interrupt7.obj
+ASSEMBLER INVOKED BY: C:\Keil_v5\C51\BIN\A51.EXE interrupt7.asm SET(SMALL) DEBUG PRINT(.\Listings\interrupt7.lst) OBJECT
+                      (.\Objects\interrupt7.obj) EP
+
+LOC  OBJ            LINE     SOURCE
+
+                       1     
+                       2     
+                       3     
+                       4     
+                       5     
+                       6     
+                       7     
+0000                   8     ORG 0
+0000 020030            9     LJMP MAIN
+000B                  10     ORG 000BH ;ISR for timer 0
+000B B281             11     CPL P0.1 ;toggle P0.1
+000D 32               12     RETI ;return from ISR
+0023                  13     ORG 23H ;
+0023 020100           14     LJMP SERIAL ;jump to serial interrupt ISR
+0030                  15     ORG 30H
+                      16     
+0030 7590FF           17     MAIN: MOV P1,#0FFH ;make P1 an input port
+0033 758922           18     MOV TMOD,#22H ;timer 1,mode 2(auto reload)
+0036 758DF6           19     MOV TH1,#0F6H ;4800 baud rate
+0039 759850           20     MOV SCON,#50H ;8-bit, 1 stop, receive enabled
+003C 758CA4           21     MOV TH0,#-92 ;for 5kHZ wave
+003F 8592A8           22     MOV IE,10010010B ;enable serial int.
+0042 D28E             23     SETB TR1 ;start timer 1
+                      24     
+0044 D28C             25     SETB TR0 ;start timer 0
+0046 E590             26     BACK: MOV A,P1 ;read data from port 1
+0048 F599             27     MOV SBUF,A ;give a copy to SBUF
+004A F5A0             28     MOV P2,A ;send it to P2
+004C 80F8             29     SJMP BACK ;stay in loop indefinitely
+                      30     
+                      31     ;-----------------SERIAL PORT ISR
+0100                  32     ORG 100H
+0100 209907           33     SERIAL:JB TI,TRANS ;jump if TI is high
+0103 E599             34     MOV A,SBUF ;otherwise due to receive
+0105 F580             35     MOV P0,A ;send serial data to P0
+0107 C298             36     CLR RI ;clear RI since CPU doesn’t
+0109 32               37     RETI ;return from ISR
+010A C299             38     TRANS: CLR TI ;clear TI since CPU doesn’t
+010C 32               39     RETI ;return from ISR
+                      40     END
+A51 MACRO ASSEMBLER  INTERRUPT7                                                           08/06/2025 20:25:56 PAGE     2
+
+SYMBOL TABLE LISTING
+------ ----- -------
+
+
+N A M E             T Y P E  V A L U E   ATTRIBUTES
+
+BACK . . . . . . .  C ADDR   0046H   A   
+IE . . . . . . . .  D ADDR   00A8H   A   
+MAIN . . . . . . .  C ADDR   0030H   A   
+P0 . . . . . . . .  D ADDR   0080H   A   
+P1 . . . . . . . .  D ADDR   0090H   A   
+P2 . . . . . . . .  D ADDR   00A0H   A   
+RI . . . . . . . .  B ADDR   0098H.0 A   
+SBUF . . . . . . .  D ADDR   0099H   A   
+SCON . . . . . . .  D ADDR   0098H   A   
+SERIAL . . . . . .  C ADDR   0100H   A   
+TH0. . . . . . . .  D ADDR   008CH   A   
+TH1. . . . . . . .  D ADDR   008DH   A   
+TI . . . . . . . .  B ADDR   0098H.1 A   
+TMOD . . . . . . .  D ADDR   0089H   A   
+TR0. . . . . . . .  B ADDR   0088H.4 A   
+TR1. . . . . . . .  B ADDR   0088H.6 A   
+TRANS. . . . . . .  C ADDR   010AH   A   
+
+
+REGISTER BANK(S) USED: 0 
+
+
+ASSEMBLY COMPLETE.  0 WARNING(S), 0 ERROR(S)

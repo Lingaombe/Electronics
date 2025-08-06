@@ -392,9 +392,29 @@
               <FilePath>.\interrupt3.asm</FilePath>
             </File>
             <File>
-              <FileName>interupt4.asm</FileName>
+              <FileName>interrupt5.asm</FileName>
               <FileType>2</FileType>
-              <FilePath>.\interupt4.asm</FilePath>
+              <FilePath>.\interrupt5.asm</FilePath>
+            </File>
+            <File>
+              <FileName>interrupt4.asm</FileName>
+              <FileType>2</FileType>
+              <FilePath>.\interrupt4.asm</FilePath>
+            </File>
+            <File>
+              <FileName>interrupt6.asm</FileName>
+              <FileType>2</FileType>
+              <FilePath>.\interrupt6.asm</FilePath>
+            </File>
+            <File>
+              <FileName>interrupt7.asm</FileName>
+              <FileType>2</FileType>
+              <FilePath>.\interrupt7.asm</FilePath>
+            </File>
+            <File>
+              <FileName>interrupt8.asm</FileName>
+              <FileType>2</FileType>
+              <FilePath>.\interrupt8.asm</FilePath>
             </File>
           </Files>
         </Group>

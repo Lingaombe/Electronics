@@ -1,6 +1,10 @@
 ".\Objects\interrupt1.obj",
 ".\Objects\interrupt2.obj",
 ".\Objects\interrupt3.obj",
-".\Objects\interupt4.obj" 
+".\Objects\interrupt5.obj",
+".\Objects\interrupt4.obj",
+".\Objects\interrupt6.obj",
+".\Objects\interrupt7.obj",
+".\Objects\interrupt8.obj" 
 TO ".\Objects\interrupts" 
 PRINT(".\Listings\interrupts.m51")
