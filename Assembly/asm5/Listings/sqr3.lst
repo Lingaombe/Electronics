@@ -1,0 +1,45 @@
+A51 MACRO ASSEMBLER  SQR3                                                                 08/06/2025 20:00:42 PAGE     1
+
+
+MACRO ASSEMBLER A51 V8.2.7.0
+OBJECT MODULE PLACED IN .\Objects\sqr3.obj
+ASSEMBLER INVOKED BY: C:\Keil_v5\C51\BIN\A51.EXE sqr3.asm SET(SMALL) DEBUG PRINT(.\Listings\sqr3.lst) OBJECT(.\Objects\s
+                      qr3.obj) EP
+
+LOC  OBJ            LINE     SOURCE
+
+                       1     
+                       2     
+                       3     
+                       4     
+0000 758902            5     MOV TMOD,#02 
+0003                   6     MOV TH0,#D2H 
+*** __________________________________^
+*** ERROR #A45 IN 6 (sqr3.asm, LINE 6): UNDEFINED SYMBOL (PASS-2)
+0006 D28C              7     SETB TR0 
+0008 308DFD            8     AGAIN: JNB TF0, AGAIN 
+000B B295              9     CPL P1.5 
+000D C28D             10     CLR TF0 
+000F 80F7             11     SJMP AGAIN 
+                      12     END
+A51 MACRO ASSEMBLER  SQR3                                                                 08/06/2025 20:00:42 PAGE     2
+
+SYMBOL TABLE LISTING
+------ ----- -------
+
+
+N A M E             T Y P E  V A L U E   ATTRIBUTES
+
+AGAIN. . . . . . .  C ADDR   0008H   A   
+D2H. . . . . . . .    ----   -----       
+P1 . . . . . . . .  D ADDR   0090H   A   
+TF0. . . . . . . .  B ADDR   0088H.5 A   
+TH0. . . . . . . .  D ADDR   008CH   A   
+TMOD . . . . . . .  D ADDR   0089H   A   
+TR0. . . . . . . .  B ADDR   0088H.4 A   
+
+
+REGISTER BANK(S) USED: 0 
+
+
+ASSEMBLY COMPLETE.  0 WARNING(S), 1 ERROR(S)

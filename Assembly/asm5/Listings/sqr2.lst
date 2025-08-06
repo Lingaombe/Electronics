@@ -1,0 +1,42 @@
+A51 MACRO ASSEMBLER  SQR2                                                                 08/06/2025 19:59:21 PAGE     1
+
+
+MACRO ASSEMBLER A51 V8.2.7.0
+OBJECT MODULE PLACED IN .\Objects\sqr2.obj
+ASSEMBLER INVOKED BY: C:\Keil_v5\C51\BIN\A51.EXE sqr2.asm SET(SMALL) DEBUG PRINT(.\Listings\sqr2.lst) OBJECT(.\Objects\s
+                      qr2.obj) EP
+
+LOC  OBJ            LINE     SOURCE
+
+                       1     
+                       2     
+                       3     
+                       4     
+0000 758902            5     MOV TMOD,#02 
+0003 758C48            6     MOV TH0,#48H 
+0006 D28C              7     SETB TR0 
+0008 308DFD            8     AGAIN: JNB TF0, AGAIN 
+000B B2A3              9     CPL P2.3 
+000D C28D             10     CLR TF0 
+000F 80F7             11     SJMP AGAIN 
+                      12     END
+A51 MACRO ASSEMBLER  SQR2                                                                 08/06/2025 19:59:21 PAGE     2
+
+SYMBOL TABLE LISTING
+------ ----- -------
+
+
+N A M E             T Y P E  V A L U E   ATTRIBUTES
+
+AGAIN. . . . . . .  C ADDR   0008H   A   
+P2 . . . . . . . .  D ADDR   00A0H   A   
+TF0. . . . . . . .  B ADDR   0088H.5 A   
+TH0. . . . . . . .  D ADDR   008CH   A   
+TMOD . . . . . . .  D ADDR   0089H   A   
+TR0. . . . . . . .  B ADDR   0088H.4 A   
+
+
+REGISTER BANK(S) USED: 0 
+
+
+ASSEMBLY COMPLETE.  0 WARNING(S), 0 ERROR(S)

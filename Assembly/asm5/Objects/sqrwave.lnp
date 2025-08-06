@@ -1,0 +1,4 @@
+".\Objects\sqr1.obj",
+".\Objects\sqr2.obj" 
+TO ".\Objects\sqrwave" 
+PRINT(".\Listings\sqrwave.m51")
