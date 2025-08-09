@@ -1,0 +1,5 @@
+".\Objects\mode2.obj",
+".\Objects\mod1.obj",
+".\Objects\mod3.obj" 
+TO ".\Objects\mode2" 
+PRINT(".\Listings\mode2.m51")
