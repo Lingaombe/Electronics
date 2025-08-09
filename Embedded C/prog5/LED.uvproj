@@ -396,6 +396,21 @@
               <FileType>1</FileType>
               <FilePath>.\led4.c</FilePath>
             </File>
+            <File>
+              <FileName>led5.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\led5.c</FilePath>
+            </File>
+            <File>
+              <FileName>led6.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\led6.c</FilePath>
+            </File>
+            <File>
+              <FileName>led7.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>.\led7.c</FilePath>
+            </File>
           </Files>
         </Group>
       </Groups>

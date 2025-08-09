@@ -1,9 +1,9 @@
-BL51 BANKED LINKER/LOCATER V6.22.4.0                                                    08/09/2025  20:16:16  PAGE 1
+BL51 BANKED LINKER/LOCATER V6.22.4.0                                                    08/09/2025  20:21:03  PAGE 1
 
 
 BL51 BANKED LINKER/LOCATER V6.22.4.0, INVOKED BY:
-C:\KEIL_V5\C51\BIN\BL51.EXE .\Objects\led1.obj, .\Objects\led2.obj, .\Objects\led3.obj, .\Objects\led4.obj TO .\Objects\
->> LED PRINT (.\Listings\LED.m51)
+C:\KEIL_V5\C51\BIN\BL51.EXE .\Objects\led1.obj, .\Objects\led2.obj, .\Objects\led3.obj, .\Objects\led4.obj, .\Objects\le
+>> d5.obj, .\Objects\led6.obj, .\Objects\led7.obj TO .\Objects\LED PRINT (.\Listings\LED.m51)
 
 
 MEMORY MODEL: SMALL
@@ -14,7 +14,11 @@ INPUT MODULES INCLUDED:
   .\Objects\led2.obj (LED2)
   .\Objects\led3.obj (LED3)
   .\Objects\led4.obj (LED4)
+  .\Objects\led5.obj (LED5)
+  .\Objects\led6.obj (LED6)
+  .\Objects\led7.obj (LED7)
   C:\KEIL_V5\C51\LIB\C51S.LIB (?C_STARTUP)
+  C:\KEIL_V5\C51\LIB\C51S.LIB (?C?COPY)
 
 
 LINK MAP OF MODULE:  .\Objects\LED (LED1)
@@ -25,22 +29,37 @@ LINK MAP OF MODULE:  .\Objects\LED (LED1)
 
             * * * * * * *   D A T A   M E M O R Y   * * * * * * *
             REG     0000H     0008H     ABSOLUTE     "REG BANK 0"
-            DATA    0008H     0002H     UNIT         ?DT?MAIN?LED4
-            IDATA   000AH     0001H     UNIT         ?STACK
+            DATA    0008H     0014H     UNIT         ?DT?MAIN?LED6
+            DATA    001CH     000CH     UNIT         ?DT?MAIN?LED7
+            DATA    0028H     0002H     UNIT         ?DT?MAIN?LED4
+            DATA    002AH     0002H     UNIT         ?DT?MAIN?LED5
+            IDATA   002CH     0001H     UNIT         ?STACK
 
             * * * * * * *   C O D E   M E M O R Y   * * * * * * *
             CODE    0000H     0003H     ABSOLUTE     
                     0003H     07FDH                  *** GAP ***
-            CODE    0800H     0028H     UNIT         ?PR?MAIN?LED4
-            CODE    0828H     0024H     UNIT         ?PR?_DELAY?LED2
-            CODE    084CH     0024H     UNIT         ?PR?_DELAY?LED3
-            CODE    0870H     0024H     UNIT         ?PR?_DELAY?LED4
-            CODE    0894H     0016H     UNIT         ?PR?MAIN?LED3
-            CODE    08AAH     0014H     UNIT         ?PR?MAIN?LED2
-            CODE    08BEH     0010H     UNIT         ?PR?DELAY?LED1
-            CODE    08CEH     000EH     UNIT         ?PR?MAIN?LED1
-            CODE    08DCH     000CH     UNIT         ?C_C51STARTUP
+            CODE    0800H     00F6H     UNIT         ?C?LIB_CODE
+            CODE    08F6H     003DH     UNIT         ?PR?MAIN?LED6
+            CODE    0933H     003DH     UNIT         ?PR?MAIN?LED7
+            CODE    0970H     0028H     UNIT         ?PR?MAIN?LED4
+            CODE    0998H     0028H     UNIT         ?PR?MAIN?LED5
+            CODE    09C0H     0024H     UNIT         ?PR?_DELAY?LED2
+            CODE    09E4H     0024H     UNIT         ?PR?_DELAY?LED3
+            CODE    0A08H     0024H     UNIT         ?PR?_DELAY?LED4
+            CODE    0A2CH     0024H     UNIT         ?PR?_DELAY?LED5
+            CODE    0A50H     0024H     UNIT         ?PR?_DELAY?LED6
+            CODE    0A74H     0024H     UNIT         ?PR?_DELAY?LED7
+            CODE    0A98H     0016H     UNIT         ?PR?MAIN?LED3
+            CODE    0AAEH     0014H     UNIT         ?PR?MAIN?LED2
+            CODE    0AC2H     0012H     UNIT         ?CO?LED6
+            CODE    0AD4H     0010H     UNIT         ?PR?DELAY?LED1
+            CODE    0AE4H     000EH     UNIT         ?PR?MAIN?LED1
+            CODE    0AF2H     000CH     UNIT         ?C_C51STARTUP
+            CODE    0AFEH     000AH     UNIT         ?CO?LED7
 
+
+
+BL51 BANKED LINKER/LOCATER V6.22.4.0                                                  08/09/2025  20:21:03  PAGE 2
 
 
 OVERLAY MAP OF MODULE:   .\Objects\LED (LED1)
@@ -59,9 +78,6 @@ SEGMENT
 
 IGNORED SYMBOLS:
    MAIN
-BL51 BANKED LINKER/LOCATER V6.22.4.0                                                  08/09/2025  20:16:16  PAGE 2
-
-
    _DELAY
 
 
@@ -74,43 +90,46 @@ SYMBOL TABLE OF MODULE:  .\Objects\LED (LED1)
   -------         MODULE        LED1
   C:0000H         SYMBOL        _ICE_DUMMY_
   D:00A0H         PUBLIC        P2
-  C:08BEH         PUBLIC        delay
-  C:08CEH         PUBLIC        main
+  C:0AD4H         PUBLIC        delay
+  C:0AE4H         PUBLIC        main
   D:0089H         PUBLIC        TMOD
   B:0088H.5       PUBLIC        TF0
   D:008CH         PUBLIC        TH0
   B:0088H.4       PUBLIC        TR0
   B:00A0H.0       PUBLIC        x
   -------         PROC          MAIN
-  C:08CEH         LINE#         7
-  C:08CEH         LINE#         8
-  C:08CEH         LINE#         9
-  C:08D0H         LINE#         10
-  C:08D0H         LINE#         11
-  C:08D0H         LINE#         12
-  C:08D2H         LINE#         13
-  C:08D5H         LINE#         14
-  C:08D7H         LINE#         15
-  C:08DAH         LINE#         16
+  C:0AE4H         LINE#         7
+  C:0AE4H         LINE#         8
+  C:0AE4H         LINE#         9
+  C:0AE6H         LINE#         10
+  C:0AE6H         LINE#         11
+  C:0AE6H         LINE#         12
+  C:0AE8H         LINE#         13
+  C:0AEBH         LINE#         14
+  C:0AEDH         LINE#         15
+  C:0AF0H         LINE#         16
   -------         ENDPROC       MAIN
   -------         PROC          DELAY
-  C:08BEH         LINE#         18
-  C:08BEH         LINE#         19
-  C:08BEH         LINE#         20
-  C:08C1H         LINE#         21
-  C:08C4H         LINE#         22
-  C:08C6H         LINE#         23
-  C:08C9H         LINE#         24
-  C:08CBH         LINE#         25
-  C:08CDH         LINE#         26
+  C:0AD4H         LINE#         18
+  C:0AD4H         LINE#         19
+  C:0AD4H         LINE#         20
+  C:0AD7H         LINE#         21
+  C:0ADAH         LINE#         22
+  C:0ADCH         LINE#         23
+  C:0ADFH         LINE#         24
+  C:0AE1H         LINE#         25
+  C:0AE3H         LINE#         26
+BL51 BANKED LINKER/LOCATER V6.22.4.0                                                  08/09/2025  20:21:03  PAGE 3
+
+
   -------         ENDPROC       DELAY
   -------         ENDMOD        LED1
 
   -------         MODULE        LED2
   C:0000H         SYMBOL        _ICE_DUMMY_
   D:00A0H         PUBLIC        P2
-  C:0828H         PUBLIC        _delay
-  C:08AAH         PUBLIC        main
+  C:09C0H         PUBLIC        _delay
+  C:0AAEH         PUBLIC        main
   D:0089H         PUBLIC        TMOD
   B:0088H.5       PUBLIC        TF0
   D:008CH         PUBLIC        TH0
@@ -118,91 +137,187 @@ SYMBOL TABLE OF MODULE:  .\Objects\LED (LED1)
   B:00A0H.0       PUBLIC        LED
   B:0088H.4       PUBLIC        TR0
   -------         PROC          MAIN
-  C:08AAH         LINE#         6
-BL51 BANKED LINKER/LOCATER V6.22.4.0                                                  08/09/2025  20:16:16  PAGE 3
-
-
-  C:08AAH         LINE#         7
-  C:08AAH         LINE#         8
-  C:08AAH         LINE#         9
-  C:08AAH         LINE#         10
-  C:08ACH         LINE#         11
-  C:08B3H         LINE#         12
-  C:08B5H         LINE#         13
-  C:08BCH         LINE#         14
+  C:0AAEH         LINE#         6
+  C:0AAEH         LINE#         7
+  C:0AAEH         LINE#         8
+  C:0AAEH         LINE#         9
+  C:0AAEH         LINE#         10
+  C:0AB0H         LINE#         11
+  C:0AB7H         LINE#         12
+  C:0AB9H         LINE#         13
+  C:0AC0H         LINE#         14
   -------         ENDPROC       MAIN
   -------         PROC          _DELAY
   D:0006H         SYMBOL        k
   -------         DO            
   D:0004H         SYMBOL        i
   -------         ENDDO         
-  C:0828H         LINE#         16
-  C:0828H         LINE#         17
-  C:0828H         LINE#         19
-  C:0832H         LINE#         20
-  C:0832H         LINE#         22
-  C:0835H         LINE#         23
-  C:0838H         LINE#         24
-  C:083BH         LINE#         25
-  C:083DH         LINE#         26
-  C:0840H         LINE#         27
-  C:0842H         LINE#         28
-  C:0844H         LINE#         29
-  C:084BH         LINE#         30
+  C:09C0H         LINE#         16
+  C:09C0H         LINE#         17
+  C:09C0H         LINE#         19
+  C:09CAH         LINE#         20
+  C:09CAH         LINE#         22
+  C:09CDH         LINE#         23
+  C:09D0H         LINE#         24
+  C:09D3H         LINE#         25
+  C:09D5H         LINE#         26
+  C:09D8H         LINE#         27
+  C:09DAH         LINE#         28
+  C:09DCH         LINE#         29
+  C:09E3H         LINE#         30
   -------         ENDPROC       _DELAY
   -------         ENDMOD        LED2
 
   -------         MODULE        LED3
   C:0000H         SYMBOL        _ICE_DUMMY_
   D:00A0H         PUBLIC        P2
-  C:084CH         PUBLIC        _delay
-  C:0894H         PUBLIC        main
+  C:09E4H         PUBLIC        _delay
+  C:0A98H         PUBLIC        main
   D:0089H         PUBLIC        TMOD
   B:0088H.5       PUBLIC        TF0
   D:008CH         PUBLIC        TH0
   D:008AH         PUBLIC        TL0
   B:0088H.4       PUBLIC        TR0
   -------         PROC          MAIN
-  C:0894H         LINE#         6
-  C:0894H         LINE#         7
-  C:0894H         LINE#         8
-  C:0894H         LINE#         9
-  C:0894H         LINE#         10
-  C:0897H         LINE#         11
-  C:089EH         LINE#         12
-  C:08A1H         LINE#         13
-  C:08A8H         LINE#         14
+BL51 BANKED LINKER/LOCATER V6.22.4.0                                                  08/09/2025  20:21:03  PAGE 4
+
+
+  C:0A98H         LINE#         6
+  C:0A98H         LINE#         7
+  C:0A98H         LINE#         8
+  C:0A98H         LINE#         9
+  C:0A98H         LINE#         10
+  C:0A9BH         LINE#         11
+  C:0AA2H         LINE#         12
+  C:0AA5H         LINE#         13
+  C:0AACH         LINE#         14
   -------         ENDPROC       MAIN
   -------         PROC          _DELAY
   D:0006H         SYMBOL        k
   -------         DO            
   D:0004H         SYMBOL        i
   -------         ENDDO         
-  C:084CH         LINE#         16
-BL51 BANKED LINKER/LOCATER V6.22.4.0                                                  08/09/2025  20:16:16  PAGE 4
-
-
-  C:084CH         LINE#         17
-  C:084CH         LINE#         19
-  C:0856H         LINE#         20
-  C:0856H         LINE#         22
-  C:0859H         LINE#         23
-  C:085CH         LINE#         24
-  C:085FH         LINE#         25
-  C:0861H         LINE#         26
-  C:0864H         LINE#         27
-  C:0866H         LINE#         28
-  C:0868H         LINE#         29
-  C:086FH         LINE#         30
+  C:09E4H         LINE#         16
+  C:09E4H         LINE#         17
+  C:09E4H         LINE#         19
+  C:09EEH         LINE#         20
+  C:09EEH         LINE#         22
+  C:09F1H         LINE#         23
+  C:09F4H         LINE#         24
+  C:09F7H         LINE#         25
+  C:09F9H         LINE#         26
+  C:09FCH         LINE#         27
+  C:09FEH         LINE#         28
+  C:0A00H         LINE#         29
+  C:0A07H         LINE#         30
   -------         ENDPROC       _DELAY
   -------         ENDMOD        LED3
 
   -------         MODULE        LED4
   C:0000H         SYMBOL        _ICE_DUMMY_
   D:00A0H         PUBLIC        P2
-  C:0870H         PUBLIC        _delay
-  C:0800H         PUBLIC        main
+  C:0A08H         PUBLIC        _delay
+  C:0970H         PUBLIC        main
   D:0089H         PUBLIC        TMOD
+  B:0088H.5       PUBLIC        TF0
+  D:008CH         PUBLIC        TH0
+  D:008AH         PUBLIC        TL0
+  B:0088H.4       PUBLIC        TR0
+  -------         PROC          MAIN
+  -------         DO            
+  D:0028H         SYMBOL        j
+  -------         ENDDO         
+  C:0970H         LINE#         6
+  C:0970H         LINE#         7
+  C:0970H         LINE#         8
+  C:0970H         LINE#         9
+  C:0970H         LINE#         11
+  C:0973H         LINE#         12
+  C:0978H         LINE#         13
+  C:0978H         LINE#         14
+  C:097FH         LINE#         15
+  C:0985H         LINE#         16
+  -------         ENDPROC       MAIN
+  -------         PROC          _DELAY
+BL51 BANKED LINKER/LOCATER V6.22.4.0                                                  08/09/2025  20:21:03  PAGE 5
+
+
+  D:0006H         SYMBOL        k
+  -------         DO            
+  D:0004H         SYMBOL        i
+  -------         ENDDO         
+  C:0A08H         LINE#         19
+  C:0A08H         LINE#         20
+  C:0A08H         LINE#         22
+  C:0A12H         LINE#         23
+  C:0A12H         LINE#         25
+  C:0A15H         LINE#         26
+  C:0A18H         LINE#         27
+  C:0A1BH         LINE#         28
+  C:0A1DH         LINE#         29
+  C:0A20H         LINE#         30
+  C:0A22H         LINE#         31
+  C:0A24H         LINE#         32
+  C:0A2BH         LINE#         33
+  -------         ENDPROC       _DELAY
+  -------         ENDMOD        LED4
+
+  -------         MODULE        LED5
+  C:0000H         SYMBOL        _ICE_DUMMY_
+  D:00A0H         PUBLIC        P2
+  C:0A2CH         PUBLIC        _delay
+  C:0998H         PUBLIC        main
+  D:0089H         PUBLIC        TMOD
+  B:0088H.5       PUBLIC        TF0
+  D:008CH         PUBLIC        TH0
+  D:008AH         PUBLIC        TL0
+  B:0088H.4       PUBLIC        TR0
+  -------         PROC          MAIN
+  -------         DO            
+  D:002AH         SYMBOL        j
+  -------         ENDDO         
+  C:0998H         LINE#         6
+  C:0998H         LINE#         7
+  C:0998H         LINE#         8
+  C:0998H         LINE#         9
+  C:0998H         LINE#         11
+  C:099BH         LINE#         12
+  C:09A0H         LINE#         13
+  C:09A0H         LINE#         14
+  C:09A7H         LINE#         15
+  C:09ADH         LINE#         16
+  -------         ENDPROC       MAIN
+  -------         PROC          _DELAY
+  D:0006H         SYMBOL        k
+  -------         DO            
+  D:0004H         SYMBOL        i
+  -------         ENDDO         
+  C:0A2CH         LINE#         19
+  C:0A2CH         LINE#         20
+  C:0A2CH         LINE#         22
+  C:0A36H         LINE#         23
+  C:0A36H         LINE#         25
+  C:0A39H         LINE#         26
+  C:0A3CH         LINE#         27
+BL51 BANKED LINKER/LOCATER V6.22.4.0                                                  08/09/2025  20:21:03  PAGE 6
+
+
+  C:0A3FH         LINE#         28
+  C:0A41H         LINE#         29
+  C:0A44H         LINE#         30
+  C:0A46H         LINE#         31
+  C:0A48H         LINE#         32
+  C:0A4FH         LINE#         33
+  -------         ENDPROC       _DELAY
+  -------         ENDMOD        LED5
+
+  -------         MODULE        LED6
+  C:0000H         SYMBOL        _ICE_DUMMY_
+  D:00A0H         PUBLIC        P2
+  C:0A50H         PUBLIC        _delay
+  C:08F6H         PUBLIC        main
+  D:0089H         PUBLIC        TMOD
+  C:0AC2H         SYMBOL        _?ix1000
   B:0088H.5       PUBLIC        TF0
   D:008CH         PUBLIC        TH0
   D:008AH         PUBLIC        TL0
@@ -210,47 +325,103 @@ SYMBOL TABLE OF MODULE:  .\Objects\LED (LED1)
   -------         PROC          MAIN
   -------         DO            
   D:0008H         SYMBOL        j
+  D:000AH         SYMBOL        m
   -------         ENDDO         
-  C:0800H         LINE#         6
-  C:0800H         LINE#         7
-  C:0800H         LINE#         8
-  C:0800H         LINE#         9
-  C:0800H         LINE#         11
-  C:0803H         LINE#         12
-  C:0808H         LINE#         13
-  C:0808H         LINE#         14
-  C:080FH         LINE#         15
-  C:0815H         LINE#         16
+  C:08F6H         LINE#         6
+  C:08F6H         LINE#         7
+  C:08F6H         LINE#         8
+  C:08F6H         LINE#         9
+  C:08F6H         LINE#         11
+  C:0909H         LINE#         12
+  C:090EH         LINE#         13
+  C:090EH         LINE#         14
+  C:0919H         LINE#         15
+  C:0920H         LINE#         16
   -------         ENDPROC       MAIN
   -------         PROC          _DELAY
   D:0006H         SYMBOL        k
   -------         DO            
   D:0004H         SYMBOL        i
   -------         ENDDO         
-  C:0870H         LINE#         19
-  C:0870H         LINE#         20
-  C:0870H         LINE#         22
-  C:087AH         LINE#         23
-  C:087AH         LINE#         25
-  C:087DH         LINE#         26
-  C:0880H         LINE#         27
-  C:0883H         LINE#         28
-  C:0885H         LINE#         29
-  C:0888H         LINE#         30
-  C:088AH         LINE#         31
-  C:088CH         LINE#         32
-BL51 BANKED LINKER/LOCATER V6.22.4.0                                                  08/09/2025  20:16:16  PAGE 5
-
-
-  C:0893H         LINE#         33
+  C:0A50H         LINE#         19
+  C:0A50H         LINE#         20
+  C:0A50H         LINE#         22
+  C:0A5AH         LINE#         23
+  C:0A5AH         LINE#         25
+  C:0A5DH         LINE#         26
+  C:0A60H         LINE#         27
+  C:0A63H         LINE#         28
+  C:0A65H         LINE#         29
+  C:0A68H         LINE#         30
+  C:0A6AH         LINE#         31
+  C:0A6CH         LINE#         32
+  C:0A73H         LINE#         33
   -------         ENDPROC       _DELAY
-  -------         ENDMOD        LED4
+  -------         ENDMOD        LED6
+
+BL51 BANKED LINKER/LOCATER V6.22.4.0                                                  08/09/2025  20:21:03  PAGE 7
+
+
+  -------         MODULE        LED7
+  C:0000H         SYMBOL        _ICE_DUMMY_
+  D:00A0H         PUBLIC        P2
+  C:0A74H         PUBLIC        _delay
+  C:0933H         PUBLIC        main
+  D:0089H         PUBLIC        TMOD
+  C:0AFEH         SYMBOL        _?ix1000
+  B:0088H.5       PUBLIC        TF0
+  D:008CH         PUBLIC        TH0
+  D:008AH         PUBLIC        TL0
+  B:0088H.4       PUBLIC        TR0
+  -------         PROC          MAIN
+  -------         DO            
+  D:001CH         SYMBOL        j
+  D:001EH         SYMBOL        m
+  -------         ENDDO         
+  C:0933H         LINE#         6
+  C:0933H         LINE#         7
+  C:0933H         LINE#         8
+  C:0933H         LINE#         9
+  C:0933H         LINE#         11
+  C:0946H         LINE#         12
+  C:094BH         LINE#         13
+  C:094BH         LINE#         14
+  C:0956H         LINE#         15
+  C:095DH         LINE#         16
+  -------         ENDPROC       MAIN
+  -------         PROC          _DELAY
+  D:0006H         SYMBOL        k
+  -------         DO            
+  D:0004H         SYMBOL        i
+  -------         ENDDO         
+  C:0A74H         LINE#         19
+  C:0A74H         LINE#         20
+  C:0A74H         LINE#         22
+  C:0A7EH         LINE#         23
+  C:0A7EH         LINE#         25
+  C:0A81H         LINE#         26
+  C:0A84H         LINE#         27
+  C:0A87H         LINE#         28
+  C:0A89H         LINE#         29
+  C:0A8CH         LINE#         30
+  C:0A8EH         LINE#         31
+  C:0A90H         LINE#         32
+  C:0A97H         LINE#         33
+  -------         ENDPROC       _DELAY
+  -------         ENDMOD        LED7
+
+  -------         MODULE        ?C?COPY
+  C:08D0H         PUBLIC        ?C?COPY
+  -------         ENDMOD        ?C?COPY
 
 *** ERROR L104: MULTIPLE PUBLIC DEFINITIONS
     SYMBOL:  MAIN
     MODULE:  .\Objects\led2.obj (LED2)
 
 *** ERROR L104: MULTIPLE PUBLIC DEFINITIONS
+BL51 BANKED LINKER/LOCATER V6.22.4.0                                                  08/09/2025  20:21:03  PAGE 8
+
+
     SYMBOL:  _DELAY
     MODULE:  .\Objects\led3.obj (LED3)
 
@@ -265,6 +436,30 @@ SYMBOL TABLE OF MODULE:  .\Objects\LED (LED1)
 *** ERROR L104: MULTIPLE PUBLIC DEFINITIONS
     SYMBOL:  MAIN
     MODULE:  .\Objects\led4.obj (LED4)
+
+*** ERROR L104: MULTIPLE PUBLIC DEFINITIONS
+    SYMBOL:  _DELAY
+    MODULE:  .\Objects\led5.obj (LED5)
+
+*** ERROR L104: MULTIPLE PUBLIC DEFINITIONS
+    SYMBOL:  MAIN
+    MODULE:  .\Objects\led5.obj (LED5)
+
+*** ERROR L104: MULTIPLE PUBLIC DEFINITIONS
+    SYMBOL:  _DELAY
+    MODULE:  .\Objects\led6.obj (LED6)
+
+*** ERROR L104: MULTIPLE PUBLIC DEFINITIONS
+    SYMBOL:  MAIN
+    MODULE:  .\Objects\led6.obj (LED6)
+
+*** ERROR L104: MULTIPLE PUBLIC DEFINITIONS
+    SYMBOL:  _DELAY
+    MODULE:  .\Objects\led7.obj (LED7)
+
+*** ERROR L104: MULTIPLE PUBLIC DEFINITIONS
+    SYMBOL:  MAIN
+    MODULE:  .\Objects\led7.obj (LED7)
 
 *** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
     SEGMENT: ?PR?MAIN?LED2
@@ -275,9 +470,21 @@ SYMBOL TABLE OF MODULE:  .\Objects\LED (LED1)
 *** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
     SEGMENT: ?PR?MAIN?LED4
 
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?MAIN?LED5
+
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?MAIN?LED6
+
+*** WARNING L16: UNCALLED SEGMENT, IGNORED FOR OVERLAY PROCESS
+    SEGMENT: ?PR?MAIN?LED7
+
+BL51 BANKED LINKER/LOCATER V6.22.4.0                                                  08/09/2025  20:21:03  PAGE 9
+
+
 ******************************************************************************
-* RESTRICTED VERSION WITH 0800H BYTE CODE SIZE LIMIT; USED: 00DCH BYTE (10%) *
+* RESTRICTED VERSION WITH 0800H BYTE CODE SIZE LIMIT; USED: 0206H BYTE (25%) *
 ******************************************************************************
 
-Program Size: data=11.0 xdata=0 code=235
-LINK/LOCATE RUN COMPLETE.  3 WARNING(S),  5 ERROR(S)
+Program Size: data=45.0 xdata=0 code=779
+LINK/LOCATE RUN COMPLETE.  6 WARNING(S),  11 ERROR(S)
