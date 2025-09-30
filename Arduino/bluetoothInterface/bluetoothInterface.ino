@@ -2,7 +2,7 @@ char data = 0;
 
 void setup() {
   Serial.begin(9600);
-  transmission pinMode(13, OUTPUT);
+  pinMode(13, OUTPUT);
 }
 
 void loop() {
