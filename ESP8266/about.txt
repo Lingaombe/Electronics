@@ -1,1 +1,53 @@
-thinkspeak
+#include <ESP8266WiFi.h>
+#include "ThingSpeak.h"
+// Replace with your network credentials
+const char* ssid = "poonam";
+const char* password = "poonam@2025";
+// ThingSpeak Channel details
+unsigned long myChannelNumber = xxxxx; // e.g., 123456
+const char * myWriteAPIKey = "xxxxxxxxxxx"; // e.g., "ABCDEFGHIJK12345"
+const int sensor_pin = A0; // Soil moisture sensor analog pin A0
+WiFiClient client;
+void setup() {
+Serial.begin(9600);
+delay(100);
+Serial.println("\nConnecting to ");
+Serial.println(ssid);
+WiFi.mode(WIFI_STA);
+WiFi.begin(ssid, password);
+while (WiFi.status() != WL_CONNECTED)
+{
+delay(500);
+Serial.print(".");
+}
+Serial.println("");
+Serial.println("WiFi connected");
+ThingSpeak.begin(client); // Initialize ThingSpeak
+}
+void loop() {
+// Read raw analog value from the sensor (0 to 1023 for most ESP8266s)
+const int sensorValue = analogRead(sensor_pin);
+float moisture_percentage;
+// Convert raw value to a percentage (optional, adjust min/max based on
+calibration)
+// Higher raw value means drier soil.
+// Assuming 0 is 100% wet, 1023 is 0% wet (you may need to calibrate these
+values)
+moisture_percentage = ( 100.00 - ( (sensorValue / 1023.00) * 100.00 ) );
+Serial.print("Soil Moisture (in Percentage) = ");
+Serial.print(moisture_percentage);
+Serial.println("%");
+// Update ThingSpeak channel
+// Set the field number as defined in your ThingSpeak channel setup (e.g.,
+//Field 1)
+int statusCode = ThingSpeak.writeField(myChannelNumber, 1,
+moisture_percentage, myWriteAPIKey);
+if (statusCode == 200) {
+Serial.println("Channel update successful.");
+} else {
+Serial.print("Problem updating channel. HTTP error code ");
+Serial.println(statusCode);
+}
+// Wait for 30 seconds before sending the next update
+delay(15000);
+}
