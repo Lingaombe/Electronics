@@ -5,7 +5,7 @@ const char* ssid = "VCK";
 const char* password = "ugc@3981"; 
 
 unsigned long myChannelNumber = 3205264;
-const char* myWriteAPIKey = " mwa0000039934776";
+const char* myWriteAPIKey = "MUHIIOVWIDFS952P";
 
 #define PIR_PIN D1
 #define LED_PIN D4
